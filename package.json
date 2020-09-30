@@ -1,0 +1,25 @@
+{
+  "name": "employee-summary",
+  "version": "1.0.0",
+  "description": "Richard Ay, October 2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainRich/Employee-Summary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainRich/Employee-Summary/issues"
+  },
+  "homepage": "https://github.com/CaptainRich/Employee-Summary#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
