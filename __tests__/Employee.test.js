@@ -10,4 +10,5 @@ test('Creates an employee object', () => {
     expect(employee.name).toBe("Dave");
     expect(employee.id).toEqual(expect.any(Number));
     expect(employee.email).toBe("dave@test.com");
+    expect(employee.roll).toBe("Employee");
 });
