@@ -1,5 +1,5 @@
 
-// Import the 'Employee' class
+// Import the 'Intern' class
 
 const Intern = require('../lib/Intern');
 
