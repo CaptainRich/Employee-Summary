@@ -66,15 +66,20 @@ const getMgrInfo = () => {
         },
         {
             type: 'checkbox',
-            name: 'licenses',
+            name: 'action',
             message: 'Add an Engineer, an Intern, or Finish?',
             choices: ['1 Engineer', '2 Intern', '3 Finish']
         },
     ])
-    .then({
-        mgr = new Manager( data.mgrName, data.mgrId, data.mgrEmail, mgrOfficeNum );
-    })
-}
+    .then( (data) => {
+        let mgr = new Manager( data.mgrName, data.mgrId, data.mgrEmail, data.mgrOfficeNum );
+        return (mgr);
+    });
+};
 
 
-getMgrInfo();
+getMgrInfo()
+.then( (mgr) => {
+    console.log(mgr);
+});
+
