@@ -1,10 +1,13 @@
 // Reference the other modules needed.
 
-const inquirer = require( 'inquirer' );
-const fs       = require( 'fs' );
-const Manager = require('./lib/Manager');
+const inquirer    = require( 'inquirer' );
+const fs          = require( 'fs' );
+const Manager     = require('./lib/Manager');
+const Intern      = require('./lib/Intern');
+const Engineer    = require('./lib/Engineer');
 
-const addIntern = require( './src/staffing' );
+const {addIntern, addEngineer} = require( './src/staffing' );
+
 
 
 // The main driver for the Employee Summary application.
@@ -81,47 +84,42 @@ getMgrInfo()
 .then( (mgr) => {
     console.log(mgr);
 
-    return inquirer.prompt([
-        {   // Prompt the manager for the next action
-            type: 'list',
-            name: 'action',
-            message: 'Add an Engineer, an Intern, or Finish?',
-            choices: ['1: Engineer', '2: Intern', '3: Finish']
-        }
-    ]);
+    getNextAction();
+
 })
 .then( ({action}) => {
 
     // Get the selected action
     const selection = action.split(': ');
-    const selected = selection[0];
+    const selected = parseInt(selection[0].trim());
     console.log( 'Selected action is: ' + selected );
 
-    if( selected == 3 ) {
+    if( selection[0] == 3 ) {
         // Create the HTML Page
         return  writeFile(pageHTML);
     }
-    else if( selected == 2 ) {
+    else if( selection[0] == 2 ) {
         // Add an intern
-        addIntern( staffData )
+ 
+        addIntern()
         .then( (data) => {
             // Create the manager object
             let intern = new Intern( data.internName, data.internId, data.internEmail, data.internSchool );
             staffData.push(intern);           // add this intern to the staff array
             console.log( staffData );
-            getMgrInfo();
+            getNextAction();
         });
 
     }
     else {
         // Add an Engineer
-        addEngineer( staffData )
+        addEngineer()
         .then( (data) => {
             // Create the manager object
             let engineer = new Engineer( data.engName, data.engId, data.engEmail, data.engGitHub );
             staffData.push(engineer);           // add this Engineer to the staff array
             console.log( staffData );
-            getMgrInfo();
+            getNextAction();
         });
 
     }
@@ -131,4 +129,14 @@ getMgrInfo()
 
 });
 
-
+///////////////////////////////////////////////////////////////////////////
+const getNextAction = () => {
+    return inquirer.prompt([
+        {   // Prompt the manager for the next action
+            type: 'list',
+            name: 'action',
+            message: 'Add an Engineer, an Intern, or Finish?',
+            choices: ['1: Engineer', '2: Intern', '3: Finish']
+        }
+    ]);
+};

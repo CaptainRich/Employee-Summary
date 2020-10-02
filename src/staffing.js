@@ -3,16 +3,15 @@
 // Import the 'Engineer' class
 // Import the 'inquirer' module
 
-const Intern   = require('../lib/Intern');
-const Engineer = require('../lib/Engineer');
+// const Intern   = require('../lib/Intern');
+// const Engineer = require('../lib/Engineer');
 const inquirer = require( 'inquirer' );
 
 /////////////////////////////////////////////////////////////////
 // Function to add an 'Intern' object
-const addIntern = (staffData) => {
-
-
-    // Prompt for the intern's information
+const addIntern = () => {
+    
+    // Prompt for the intern's in formation
     return inquirer.prompt([
         {
             type: 'text',
@@ -72,9 +71,8 @@ const addIntern = (staffData) => {
 
 /////////////////////////////////////////////////////////////////
 // Function to add an 'Engineer' object
-const addEngineer = (staffData) => {
-
-
+const addEngineer = () => {
+   
     // Prompt for the Engineer's information
     return inquirer.prompt([
         {
@@ -133,5 +131,7 @@ const addEngineer = (staffData) => {
 
 };
 
-module.exports = addIntern;
-module.exports = addEngineer;
+module.exports = {
+    addIntern:    addIntern,
+    addEngineer:  addEngineer
+};
