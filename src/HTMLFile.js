@@ -26,15 +26,15 @@ const prepareFile = (staffData) => {
 
 <body class="flex-column min-100-vh">
   <header class="hero">
-    <h1 class="app-title">My Team</h1>
+    <h1 My Team</h1>
   </header>
 
   <div class="col-9 ">
     <div class="row ">
-      <div class="container next5Days">
-        <div class="row day-panels">
-          <div class="col-md-2 mr-1 card daycard">
-            <ul id="P1">${staffData[0].name}</ul>
+      <div class="container threeCards">
+        <div class="row card-panels">
+          <div class="col-md-2 mr-1 card employee">
+            <ul id="P1">${staffData[0].name} ${staffData[0].roll}</ul>
           </div>
         </div>
       </div>
