@@ -103,14 +103,27 @@ getMgrInfo()
     }
     else if( selected == 2 ) {
         // Add an intern
-        addIntern( staffData );
-        console.log( staffData );
-        getMgrInfo();
+        addIntern( staffData )
+        .then( (data) => {
+            // Create the manager object
+            let intern = new Intern( data.internName, data.internId, data.internEmail, data.internSchool );
+            staffData.push(intern);           // add this intern to the staff array
+            console.log( staffData );
+            getMgrInfo();
+        });
+
     }
     else {
         // Add an Engineer
-        addEngineer( staffData );
-        getMgrInfo();
+        addEngineer( staffData )
+        .then( (data) => {
+            // Create the manager object
+            let engineer = new Engineer( data.engName, data.engId, data.engEmail, data.engGitHub );
+            staffData.push(engineer);           // add this Engineer to the staff array
+            console.log( staffData );
+            getMgrInfo();
+        });
+
     }
 })
 .then( (writeFileResponse) => {

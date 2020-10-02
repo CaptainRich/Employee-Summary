@@ -66,12 +66,8 @@ const addIntern = (staffData) => {
                 }
             }
         }
-    ])
-    .then( (data) => {
-        // Create the manager object
-        let intern = new Intern( data.internName, data.internId, data.internEmail, data.internSchool );
-        staffData.push(intern);           // add this intern to the staff array
-    });
+    ]);
+
 };
 
 /////////////////////////////////////////////////////////////////
@@ -133,12 +129,8 @@ const addEngineer = (staffData) => {
                 }
             }
         }
-    ])
-    .then( (data) => {
-        // Create the manager object
-        let engineer = new Engineer( data.engName, data.engId, data.engEmail, data.engGitHub );
-        staffData.push(engineer);           // add this Engineer to the staff array
-    });
+    ]);
+
 };
 
 module.exports = addIntern;
