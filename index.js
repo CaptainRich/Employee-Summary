@@ -1,12 +1,12 @@
 // Reference the other modules needed.
 
 const inquirer    = require( 'inquirer' );
-const fs          = require( 'fs' );
 const Manager     = require('./lib/Manager');
 const Intern      = require('./lib/Intern');
 const Engineer    = require('./lib/Engineer');
 
 const {addIntern, addEngineer} = require( './src/staffing' );
+const {writeFile, prepareFile} = require( './src/HTMLFile' );
 
 
 
@@ -82,55 +82,18 @@ const getMgrInfo = () => {
 
 getMgrInfo()
 .then( (mgr) => {
-    console.log(mgr);
+    staffData.push(mgr);
+    console.log( "Current organization's staff data:");
+    console.log( staffData );
 
-    getNextAction();
-
-})
-.then( ({action}) => {
-
-    // Get the selected action
-    const selection = action.split(': ');
-    const selected = parseInt(selection[0].trim());
-    console.log( 'Selected action is: ' + selected );
-
-    if( selection[0] == 3 ) {
-        // Create the HTML Page
-        return  writeFile(pageHTML);
-    }
-    else if( selection[0] == 2 ) {
-        // Add an intern
- 
-        addIntern()
-        .then( (data) => {
-            // Create the manager object
-            let intern = new Intern( data.internName, data.internId, data.internEmail, data.internSchool );
-            staffData.push(intern);           // add this intern to the staff array
-            console.log( staffData );
-            getNextAction();
-        });
-
-    }
-    else {
-        // Add an Engineer
-        addEngineer()
-        .then( (data) => {
-            // Create the manager object
-            let engineer = new Engineer( data.engName, data.engId, data.engEmail, data.engGitHub );
-            staffData.push(engineer);           // add this Engineer to the staff array
-            console.log( staffData );
-            getNextAction();
-        });
-
-    }
-})
-.then( (writeFileResponse) => {
-    // Write the HTML page to the destination directory/file.
-
+    getStaff();
 });
 
-///////////////////////////////////////////////////////////////////////////
-const getNextAction = () => {
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Function to recursively obtain staff data 
+const getStaff = () => {
+
     return inquirer.prompt([
         {   // Prompt the manager for the next action
             type: 'list',
@@ -138,5 +101,47 @@ const getNextAction = () => {
             message: 'Add an Engineer, an Intern, or Finish?',
             choices: ['1: Engineer', '2: Intern', '3: Finish']
         }
-    ]);
+    ])
+    .then( ({action}) => {
+
+        // Get the selected action
+        const selection = action.split(': ');
+        const selected = parseInt(selection[0].trim());
+        console.log( 'Selected action is: ' + selected );
+    
+        if( selection[0] == 3 ) {
+            // Create the HTML Page
+            var fileData = prepareFile(staffData) 
+
+            // Write the HTML page to the destination directory/file.
+           writeFile( fileData );
+            
+        }
+        else if( selection[0] == 2 ) {
+            // Add an intern
+     
+            addIntern()
+            .then( (data) => {
+                // Create the manager object
+                let intern = new Intern( data.internName, data.internId, data.internEmail, data.internSchool );
+                staffData.push(intern);           // add this intern to the staff array
+                console.log( "Current organization's staff data:");
+                console.log( staffData );
+                return getStaff();
+            });
+    
+        }
+        else if( selection[0] == 1 ) {
+            // Add an Engineer
+            addEngineer()
+            .then( (data) => {
+                // Create the manager object
+                let engineer = new Engineer( data.engName, data.engId, data.engEmail, data.engGitHub );
+                staffData.push(engineer);           // add this Engineer to the staff array
+                console.log( "Current organization's staff data:");
+                console.log( staffData );
+                return getStaff();
+            });  
+        }
+    });
 };
