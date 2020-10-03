@@ -84,6 +84,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 8px;
   padding-right: 8px;
 }
+.whiteblue {
+  background-color: white;
+  color: blue;
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
 
 h5, .forecast {

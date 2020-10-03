@@ -113,6 +113,7 @@ const getStaff = () => {
             // Create the HTML Page
             var fileData = prepareFile(staffData) 
 
+        
             // Write the HTML page to the destination directory/file.
            writeFile( fileData );
             

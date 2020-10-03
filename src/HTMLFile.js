@@ -26,28 +26,80 @@ const prepareFile = (staffData) => {
 
 <body class="flex-column min-100-vh">
   <header class="hero">
-    <h1 My Team</h1>
+    <h1 class="app-title">My Team</h1>
   </header>
 
-  <div class="col-9 ">
-    <div class="row ">
-      <div class="container threeCards">
-        <div class="row card-panels">
-          <div class="col-md-2 mr-1 card employee">
-            <ul id="P1">${staffData[0].name} ${staffData[0].roll}</ul>
-          </div>
-        </div>
-      </div>
+  <section class="col-12">
+    <div class="flex-row justify-space-between">
+       ${generateEmployees(staffData)}
     </div>
-
-  </div>
-
+  </section>
 
   </body>
   </html>
   `;
 
 };
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Generate the HTML for each of the employees
+const generateEmployees = ( staffData ) => {
+
+    console.log( "Number of Employees: " + staffData.length );
+
+    var roll;
+    var emp;
+    for( var i = 0; i < staffData.length; i++ ) {
+
+        // Handle the different rolls
+        roll = staffData[i].getRoll();
+
+        // Handle the 'manager' roll
+        if( roll === 'Manager' ) {
+        
+          return `
+          <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column">
+            <h3 class="redwhite">Manager: ${staffData[i].name}</h3>
+
+            <p class="whiteblue">ID: ${staffData[i].id}</p>
+            <p class="whiteblue">Email: ${staffData[i].email}</p>
+            <p class="whiteblue">Office: ${staffData[i].officeNumber}</p>           
+          </div>
+        `
+        }
+             
+        // Handle the 'Intern' roll
+        if( roll === 'Intern' ) {
+        
+            return `
+            <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
+              <h3 class="redwhite">Intern: ${staffData[i].name}</h3>
+  
+              <p class="whiteblue">ID: ${staffData[i].id}</p>
+              <p class="whiteblue">Email: ${staffData[i].email}</p>
+              <p class="whiteblue">School: ${staffData[i].school}</p>
+              
+            </div>
+          `
+        }
+                       
+        // Handle the 'Engineer' roll
+        if( roll === 'Engineer' ) {
+        
+            return `
+            <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
+              <h3 class="redwhite">Engineer: ${staffData[i].name}</h3>
+  
+              <p  class="whiteblue">ID: ${staffData[i].id}</p>
+              <p  class="whiteblue">Email: ${staffData[i].email}</p>
+              <p  class="whiteblue">GitHub: ${staffData[i].gitHub}</p>
+              
+            </div>
+          `
+        }
+    };
+ };
 
 
 //////////////////////////////////////////////////////////////////////////////
