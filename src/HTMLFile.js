@@ -108,8 +108,8 @@ const generateEmployees = ( staffData ) => {
 const writeFile = (fileData) => {
 
     console.log( "in writeFile" );
-    console.log( "Filedata: " );
-    console.log( fileData );
+    //console.log( "Filedata: " );
+    //console.log( fileData );
 
     // Define the pathname of the 'readme'
     const fileName = "./dist/index.html";
