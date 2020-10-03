@@ -7,7 +7,7 @@ Richard Ay, October 2020
 * [Acceptance Criteria](#acceptance-criteria)
 * [Deployment Link](#deployment-link)
 * [Employee Summary Logic](#weather-dashboard-logic)
-* [Application Screen Shot](#application-screen-shot)
+* [Application Screen Shot and Video](#application-screen-shot-and-video)
 
 
 
@@ -28,14 +28,18 @@ GIVEN a command-line application that accepts user input:
 
 ## Deployment Link
 The deployment link to display the updated web page is: 
-[GitHub Pages](https://captainrich.github.io/Employee-Summary/) 
+[GitHub Pages](https://github.com/CaptainRich/Employee-Summary) 
 
 ## Employee Summary Logic
 
-1) The 
+1) The application can be started by typeing "node index" into the terminal command line.
+2) The top level function prompts for the Manager's information, and stores this data in an array (of objects).
+3) Based on the Manager's response for the next action, a recursive routine is invoked to obtain the data for either Engineers or Interns.  The prompts for Managers, Engineers, and Interns are slightly different, but for each, their data is saved to the same array of objects.
+4) When the Manager indicates that data entry is complete, an HTML generation routine is invoked to create the HTML page.  This is followed by a routine to actually write the HTML file (index.html) to the '/dist' subdirectory.
+5) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
 
 
-## Application Screen Shot
+## Application Screen Shot and Video
 
-![Employee Summary Image](https://github.com/CaptainRich/Weather-Dashboard/blob/master/employee-summary-screenshot.jpg)
+![Employee Summary Image](./screenshot1.jpg)
 

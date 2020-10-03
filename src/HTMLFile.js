@@ -54,13 +54,14 @@ const generateEmployees = ( staffData ) => {
 
         // Handle the different rolls
         roll = staffData[i].getRoll();
+        console.log( "Employee " + i + " Roll: " + roll );
 
         // Handle the 'manager' roll
         if( roll === 'Manager' ) {
         
           return `
           <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column">
-            <h3 class="redwhite">Manager: ${staffData[i].name}</h3>
+            <h4 class="redwhite">Manager: ${staffData[i].name}</h4>
 
             <p class="whiteblue">ID: ${staffData[i].id}</p>
             <p class="whiteblue">Email: ${staffData[i].email}</p>
@@ -74,7 +75,7 @@ const generateEmployees = ( staffData ) => {
         
             return `
             <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
-              <h3 class="redwhite">Intern: ${staffData[i].name}</h3>
+              <h4 class="redwhite">Intern: ${staffData[i].name}</h4
   
               <p class="whiteblue">ID: ${staffData[i].id}</p>
               <p class="whiteblue">Email: ${staffData[i].email}</p>
@@ -89,7 +90,7 @@ const generateEmployees = ( staffData ) => {
         
             return `
             <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
-              <h3 class="redwhite">Engineer: ${staffData[i].name}</h3>
+              <h4 class="redwhite">Engineer: ${staffData[i].name}</h4>
   
               <p  class="whiteblue">ID: ${staffData[i].id}</p>
               <p  class="whiteblue">Email: ${staffData[i].email}</p>
