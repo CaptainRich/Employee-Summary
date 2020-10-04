@@ -32,11 +32,12 @@ The deployment link to display the updated web page is:
 
 ## Employee Summary Logic
 
-1) The application can be started by typeing "node index" into the terminal command line.
+1) The application can be started by typing "node index" into the terminal command line.
 2) The top level function prompts for the Manager's information, and stores this data in an array (of objects).
 3) Based on the Manager's response for the next action, a recursive routine is invoked to obtain the data for either Engineers or Interns.  The prompts for Managers, Engineers, and Interns are slightly different, but for each, their data is saved to the same array of objects.
 4) When the Manager indicates that data entry is complete, an HTML generation routine is invoked to create the HTML page.  This is followed by a routine to actually write the HTML file (index.html) to the '/dist' subdirectory.
-5) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
+5) Staff data is stored in an array of objects, where each object contains the data specific to the type of object (Manager, Engineer, Intern).  When generating the HTML page the array utilities of 'filter' and 'map' are used to properly construct the HTML page.
+6) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
 
 
 ## Application Screen Shot and Video Link
