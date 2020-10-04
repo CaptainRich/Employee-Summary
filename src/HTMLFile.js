@@ -48,59 +48,76 @@ const generateEmployees = ( staffData ) => {
 
     console.log( "Number of Employees: " + staffData.length );
 
-    var roll;
-    var emp;
-    for( var i = 0; i < staffData.length; i++ ) {
+    // Use successive 'filter' and 'map' instances to generate the HTML for
+    // the staff.
 
-        // Handle the different rolls
-        roll = staffData[i].getRoll();
-        console.log( "Employee " + i + " Roll: " + roll );
+    var html = [];
 
-        // Handle the 'manager' roll
-        if( roll === 'Manager' ) {
-        
-          return `
-          <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column">
-            <h4 class="redwhite">Manager: ${staffData[i].name}</h4>
+    html.push( staffData 
+      .filter(employee => employee.getRoll() === 'Manager') 
+      .map(manager => generateManager(manager))
+      );
 
-            <p class="whiteblue">ID: ${staffData[i].id}</p>
-            <p class="whiteblue">Email: ${staffData[i].email}</p>
-            <p class="whiteblue">Office: ${staffData[i].officeNumber}</p>           
-          </div>
-        `
-        }
-             
-        // Handle the 'Intern' roll
-        if( roll === 'Intern' ) {
-        
-            return `
-            <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
-              <h4 class="redwhite">Intern: ${staffData[i].name}</h4
-  
-              <p class="whiteblue">ID: ${staffData[i].id}</p>
-              <p class="whiteblue">Email: ${staffData[i].email}</p>
-              <p class="whiteblue">School: ${staffData[i].school}</p>
-              
-            </div>
-          `
-        }
-                       
-        // Handle the 'Engineer' roll
-        if( roll === 'Engineer' ) {
-        
-            return `
-            <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column">
-              <h4 class="redwhite">Engineer: ${staffData[i].name}</h4>
-  
-              <p  class="whiteblue">ID: ${staffData[i].id}</p>
-              <p  class="whiteblue">Email: ${staffData[i].email}</p>
-              <p  class="whiteblue">GitHub: ${staffData[i].gitHub}</p>
-              
-            </div>
-          `
-        }
-    };
+      
+    html.push( staffData 
+      .filter(employee => employee.getRoll() === 'Engineer') 
+      .map(engineer => generateEngineer(engineer))
+      );
+
+           
+    html.push( staffData 
+      .filter(employee => employee.getRoll() === 'Intern') 
+      .map(intern => generateIntern(intern))
+      );
+
+      return html;
+
+ 
  };
+
+ ////////////////////////////////////////////////////////////////////////////
+ // Function to generate the HTML for a 'manager'
+generateManager = (manager) => {
+  return `
+  <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+    <h4 class="redwhite">Manager: ${manager.name}</h4>
+
+    <p class="whiteblue">ID: ${manager.id}</p>
+    <p class="whiteblue">Email: ${manager.email}</p>
+    <p class="whiteblue">Office: ${manager.officeNumber}</p>           
+  </div>
+`
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// Function to generate the HTML for an "Engineer"
+generateEngineer = (engineer) => {
+  return `
+  <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+    <h4 class="redwhite">Engineer: ${engineer.name}</h4>
+
+    <p  class="whiteblue">ID: ${engineer.id}</p>
+    <p  class="whiteblue">Email: ${engineer.email}</p>
+    <p  class="whiteblue">GitHub: ${engineer.gitHub}</p>
+    
+  </div>
+`
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Function to generate the HTML for an "Intern"
+generateIntern = (intern) => {
+  return `
+  <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+    <h4 class="redwhite">Intern: ${intern.name}</h4>
+
+    <p class="whiteblue">ID: ${intern.id}</p>
+    <p class="whiteblue">Email: ${intern.email}</p>
+    <p class="whiteblue">School: ${intern.school}</p>
+    
+  </div>
+`
+}
 
 
 //////////////////////////////////////////////////////////////////////////////

@@ -41,5 +41,10 @@ The deployment link to display the updated web page is:
 
 ## Application Screen Shot and Video
 
+Application screen shot:
 ![Employee Summary Image](./screenshot1.jpg)
 
+Application video:
+<video width="320" height="240" controls>
+  <source src="./my_team.mp4" type="video/mp4">
+</video>
