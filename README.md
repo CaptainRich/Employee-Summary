@@ -46,5 +46,5 @@ Application screen shot:
 
 Application video:
 <video width="320" height="240" controls>
-  <source src="./my_team.mp4" type="video/mp4">
+  <source src="./my_team_with_tests.mp4" type="video/mp4">
 </video>
