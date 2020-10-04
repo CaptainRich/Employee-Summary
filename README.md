@@ -7,7 +7,7 @@ Richard Ay, October 2020
 * [Acceptance Criteria](#acceptance-criteria)
 * [Deployment Link](#deployment-link)
 * [Employee Summary Logic](#weather-dashboard-logic)
-* [Application Screen Shot and Video](#application-screen-shot-and-video)
+* [Application Screen Shot and Video Link](#application-screen-shot-and-video-link)
 
 
 
@@ -39,12 +39,11 @@ The deployment link to display the updated web page is:
 5) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
 
 
-## Application Screen Shot and Video
+## Application Screen Shot
 
 Application screen shot:
 ![Employee Summary Image](./screenshot1.jpg)
 
-Application video:
-<video width="320" height="240" controls>
-  <source src="./my_team_with_tests.mp4" type="video/mp4">
-</video>
+Video Link: https://github.com/CaptainRich/Employee-Summary/blob/feature/html-map/dist/my_team_with_tests.mp4 
+![Walk thru Video](https://github.com/CaptainRich/Employee-Summary/blob/feature/html-map/dist/my_team_with_tests.mp4)
+
