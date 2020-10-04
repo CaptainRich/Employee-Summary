@@ -6,7 +6,7 @@ Richard Ay, October 2020
 * [Project Objective](#project-objective)
 * [Acceptance Criteria](#acceptance-criteria)
 * [Deployment Link](#deployment-link)
-* [Employee Summary Logic](#weather-dashboard-logic)
+* [Employee Summary Logic](#employee-summary-logic)
 * [Application Screen Shot and Video Link](#application-screen-shot-and-video-link)
 
 
@@ -39,10 +39,12 @@ The deployment link to display the updated web page is:
 5) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
 
 
-## Application Screen Shot
+## Application Screen Shot and Video Link
 
 Application screen shot:
 ![Employee Summary Image](./screenshot1.jpg)
+
+VIDEO:  The video (mp4) file can be found in '/dist'.  The video is too large to play in Git, and therefore must be downloaded to play.
 
 Video Link: https://github.com/CaptainRich/Employee-Summary/blob/feature/html-map/dist/my_team_with_tests.mp4 
 ![Walk thru Video](https://github.com/CaptainRich/Employee-Summary/blob/feature/html-map/dist/my_team_with_tests.mp4)
