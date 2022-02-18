@@ -31,7 +31,7 @@ GIVEN a command-line application that accepts user input:
 ## Usage Instructions
 This is a command-line application.  Assuming 'nodejs' is installed on the machine, issue the command "node index" from the console command-line.
 
-TDD (Test Driven Development) tests can be run by issuing the command "npm run test", or "npm run test <object>".
+TDD (Test Driven Development) tests can be run by issuing the command "npm run test", or "npm run test 'object'".
 
 ## Deployment Link
 The deployment link to display the updated web page is: 
