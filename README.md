@@ -5,8 +5,10 @@ Richard Ay, October 2020
 ## Table of Contents
 * [Project Objective](#project-objective)
 * [Acceptance Criteria](#acceptance-criteria)
+* [Usage Instructions](#usage-instructions)
 * [Deployment Link](#deployment-link)
 * [Employee Summary Logic](#employee-summary-logic)
+* [Technologies Used](technologies-used)
 * [Application Screen Shot and Video Link](#application-screen-shot-and-video-link)
 
 
@@ -26,6 +28,9 @@ GIVEN a command-line application that accepts user input:
 7) When I select the intern option THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu.
 8) When I decide to finish building my team THEN I exit the application, and the HTML is generated.
 
+## Usage Instructions
+This is a command-line application.  Assuming 'nodejs' is installed on the machine, issue the command "node index" from the console command-line.
+
 ## Deployment Link
 The deployment link to display the updated web page is: 
 [GitHub Pages](https://github.com/CaptainRich/Employee-Summary) 
@@ -39,6 +44,13 @@ The deployment link to display the updated web page is:
 5) Staff data is stored in an array of objects, where each object contains the data specific to the type of object (Manager, Engineer, Intern).  When generating the HTML page the array utilities of 'filter' and 'map' are used to properly construct the HTML page.
 6) The style sheet for the HTML page is also located in the '/dist' subdirectory (along with the video for submission).
 
+## Technologies Used
+* Node.js
+* objects
+* npm (inquirer, jest)
+* Javascript( ..., map, promise)
+* HTML
+* CSS
 
 ## Application Screen Shot and Video Link
 
