@@ -8,7 +8,7 @@ Richard Ay, (October 2020, *updated February 2022*)
 * [Usage Instructions](#usage-instructions)
 * [Deployment Link](#deployment-link)
 * [Employee Summary Logic](#employee-summary-logic)
-* [Technologies Used](technologies-used)
+* [Technologies Used](#technologies-used)
 * [Application Screen Shot and Video Link](#application-screen-shot-and-video-link)
 
 
