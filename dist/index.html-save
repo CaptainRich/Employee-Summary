@@ -1,0 +1,83 @@
+
+  <!DOCTYPE html> 
+  <html lang="en"> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <title>Team Details</title>
+
+  <!--  Add a "favicon" image to the Browser title tab.  -->
+  <link rel="icon" href="people.png"/>
+</head>
+
+<body class="flex-column min-100-vh">
+  <div class="wrapper">                    <!-- used for footer placement at the bottom of the viewport -->
+    <header class="hero">
+      <h1 class="app-title">Team Details</h1>
+    </header>
+
+    <section class="col-12">
+      <div class="flex-row justify-space-between">
+
+        <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+          <h4 class="redwhite border-bottom border-success border-5">Manager: Richard Ay</h4>
+
+          <p class="whiteblue">ID: 4343</p>
+          <p class="whiteblue">Email: a@b.com</p>
+          <p class="whiteblue">Office: g101</p>
+        </div>
+
+        <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+          <h4 class="redwhite border-bottom border-success border-5">Engineer: Eng1</h4>
+
+          <p class="whiteblue">ID: 1111</p>
+          <p class="whiteblue">Email: b@b.com</p>
+          <p class="whiteblue">GitHub: Eng1Git</p>
+
+        </div>
+
+        <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+          <h4 class="redwhite border-bottom border-success border-5">Engineer: Eng2</h4>
+
+          <p class="whiteblue">ID: 2222</p>
+          <p class="whiteblue">Email: c@b.com</p>
+          <p class="whiteblue">GitHub: Eng2Git</p>
+
+        </div>
+
+        <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+          <h4 class="redwhite border-bottom border-success border-5">Engineer: Eng3</h4>
+
+          <p class="whiteblue">ID: 3333</p>
+          <p class="whiteblue">Email: d@b.com</p>
+          <p class="whiteblue">GitHub: Eng3Git</p>
+
+        </div>
+
+        <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
+          <h4 class="redwhite border-bottom border-success border-5">Intern: Int1</h4>
+
+          <p class="whiteblue">ID: 4444</p>
+          <p class="whiteblue">Email: e@b.com</p>
+          <p class="whiteblue">School: Acme</p>
+
+        </div>
+
+      </div>
+    </section>
+  </div>  <!-- end of 'wrapper', for the footer placement -->
+
+  <footer class="footer">
+    &copy;2020 by R. Ay
+  </footer>
+
+</body>
+
+  </html>
+  

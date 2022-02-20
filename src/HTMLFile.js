@@ -21,12 +21,16 @@ const prepareFile = (staffData) => {
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <title>My Team</title>
+  <title>Team Details</title>
+
+  <!--  Add a "favicon" image to the Browser title tab.  -->
+  <link rel="icon" href="people.png"/>
 </head>
 
 <body class="flex-column min-100-vh">
+<div class="wrapper">                    <!-- used for footer placement at the bottom of the viewport -->
   <header class="hero">
-    <h1 class="app-title">My Team</h1>
+    <h1 class="app-title">Team Details</h1>
   </header>
 
   <section class="col-12">
@@ -34,6 +38,11 @@ const prepareFile = (staffData) => {
        ${generateEmployees(staffData)}
     </div>
   </section>
+  </div>  <!-- end of 'wrapper', for the footer placement -->
+
+  <footer class="footer">
+    &copy;2020 by R. Ay
+  </footer>
 
   </body>
   </html>
@@ -80,7 +89,7 @@ const generateEmployees = ( staffData ) => {
 generateManager = (manager) => {
   return `
   <div class="col-4 col-md-3 mb-2 text-light p-3 flex-column border border-primary rounded-lg">
-    <h4 class="redwhite">Manager: ${manager.name}</h4>
+    <h4 class="redwhite border-bottom border-success border-5">Manager: ${manager.name}</h4>
 
     <p class="whiteblue">ID: ${manager.id}</p>
     <p class="whiteblue">Email: ${manager.email}</p>
@@ -94,7 +103,7 @@ generateManager = (manager) => {
 generateEngineer = (engineer) => {
   return `
   <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
-    <h4 class="redwhite">Engineer: ${engineer.name}</h4>
+    <h4 class="redwhite border-bottom border-success border-5">Engineer: ${engineer.name}</h4>
 
     <p  class="whiteblue">ID: ${engineer.id}</p>
     <p  class="whiteblue">Email: ${engineer.email}</p>
@@ -109,7 +118,7 @@ generateEngineer = (engineer) => {
 generateIntern = (intern) => {
   return `
   <div class="col-4 col-md-3  mb-2 text-light p-3 flex-column border border-primary rounded-lg">
-    <h4 class="redwhite">Intern: ${intern.name}</h4>
+    <h4 class="redwhite border-bottom border-success border-5">Intern: ${intern.name}</h4>
 
     <p class="whiteblue">ID: ${intern.id}</p>
     <p class="whiteblue">Email: ${intern.email}</p>

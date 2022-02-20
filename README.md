@@ -34,7 +34,7 @@ This is a command-line application.  Assuming 'nodejs' is installed on the machi
 TDD (Test Driven Development) tests can be run by issuing the command "npm run test", or "npm run test 'object'".
 
 ## Deployment Link
-The deployment link to display the updated web page is: 
+The deployment link to the application is: 
 [GitHub Pages](https://github.com/CaptainRich/Employee-Summary) 
 
 ## Employee Summary Logic
