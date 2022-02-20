@@ -1,9 +1,14 @@
 /* Style sheet for Weather-Dashboard application
 /*         Richard Ay,  October 2020    */
 
+:root{
+  --primary: #ffecccff;       /* blanched almond */
+}
+
 /* Implement the custom Google Styles */
 body {
   font-family: "Staatliches", "Open Sans", sans-serif;
+  background-color: var(--primary);
 }
 
 .flex-row {
@@ -12,11 +17,11 @@ body {
   align-items: flex-end;
 }
 
-.threeCards {
+/* .threeCards {
   align-items: center;
   margin-bottom: 5px;
   min-height: 85%;
-}
+} */
 
 
 
@@ -27,11 +32,11 @@ h1, h2, h3, h4, h5, h6 {
 .redwhite {
   background-color: red;
   color: white;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 5px;
+  padding-right: 2px;
 }
 .whiteblue {
-  background-color: white;
+  background-color: var(--primary);
   color: blue;
   padding-left: 8px;
   padding-right: 8px;
